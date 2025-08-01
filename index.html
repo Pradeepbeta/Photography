@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G Studio - The Art of Capturing Memories | Professional Photography</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="logo.svg" alt="G Studio - The Art of Capturing Memories" class="logo-img">
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Capturing Life's Beautiful Moments</h1>
+            <p class="hero-subtitle">G Studio - The Art of Capturing Memories. Professional freelance photography specializing in portraits, events, and lifestyle photography</p>
+            <div class="hero-buttons">
+                <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1554048612-b6a482b224b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Professional photographer at work">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About G Studio</h2>
+                    <p class="about-intro">Welcome to G Studio - The Art of Capturing Memories, where we specialize in capturing life's most precious moments with over 8 years of professional photography experience.</p>
+                    <p>We specialize in portrait photography, wedding ceremonies, corporate events, and lifestyle shoots. Our approach combines technical expertise with creative vision to deliver stunning, authentic images that tell your unique story.</p>
+                    <p>Based in the heart of the city, G Studio works with clients locally and internationally, bringing a fresh perspective and professional quality to every project.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Happy Clients</p>
+                        </div>
+                        <div class="stat">
+                            <h3>1000+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>8+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="G Studio - Professional Photography Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">A showcase of my recent work across different photography styles</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="portraits">Portraits</button>
+                <button class="filter-btn" data-filter="weddings">Weddings</button>
+                <button class="filter-btn" data-filter="events">Events</button>
+                <button class="filter-btn" data-filter="lifestyle">Lifestyle</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="portraits">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Portrait Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Professional Portrait</h3>
+                        <p>Corporate headshot session</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="weddings">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Wedding Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Wedding Ceremony</h3>
+                        <p>Romantic outdoor wedding</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="lifestyle">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Lifestyle Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Lifestyle Session</h3>
+                        <p>Natural family moments</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Event Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Corporate Event</h3>
+                        <p>Business conference coverage</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="portraits">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Portrait Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Creative Portrait</h3>
+                        <p>Artistic headshot session</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="lifestyle">
+                    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Lifestyle Photography">
+                    <div class="portfolio-overlay">
+                        <h3>Urban Lifestyle</h3>
+                        <p>City life photography</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">Professional photography services tailored to your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Portrait Photography</h3>
+                    <p>Professional headshots, family portraits, and personal branding photography sessions.</p>
+                    <ul>
+                        <li>Individual portraits</li>
+                        <li>Family sessions</li>
+                        <li>Corporate headshots</li>
+                        <li>Personal branding</li>
+                    </ul>
+                    <div class="service-price">Starting at $200</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Wedding Photography</h3>
+                    <p>Complete wedding day coverage capturing every precious moment of your special day.</p>
+                    <ul>
+                        <li>Full day coverage</li>
+                        <li>Engagement sessions</li>
+                        <li>Bridal portraits</li>
+                        <li>Digital gallery</li>
+                    </ul>
+                    <div class="service-price">Starting at $1,500</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <h3>Event Photography</h3>
+                    <p>Corporate events, parties, and special occasions documented with professional quality.</p>
+                    <ul>
+                        <li>Corporate events</li>
+                        <li>Birthday parties</li>
+                        <li>Conferences</li>
+                        <li>Social gatherings</li>
+                    </ul>
+                    <div class="service-price">Starting at $300</div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Lifestyle Photography</h3>
+                    <p>Natural, candid photography that captures authentic moments and emotions.</p>
+                    <ul>
+                        <li>Lifestyle sessions</li>
+                        <li>Maternity photos</li>
+                        <li>Newborn sessions</li>
+                        <li>Pet photography</li>
+                    </ul>
+                    <div class="service-price">Starting at $250</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Section -->
+    <section class="ai-features">
+        <div class="container">
+            <h2 class="section-title">AI-Powered Photography Experience</h2>
+            <p class="section-subtitle">Experience the future of photography with our AI-enhanced services</p>
+            
+            <div class="ai-features-grid">
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Smart Shot Recommendations</h3>
+                    <p>Our AI analyzes your preferences and suggests the perfect shots and compositions for your session.</p>
+                </div>
+                
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>AI-Enhanced Editing</h3>
+                    <p>Advanced AI algorithms enhance your photos with perfect lighting, color correction, and artistic effects.</p>
+                </div>
+                
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Intelligent Scene Detection</h3>
+                    <p>AI automatically detects the best moments and scenes, ensuring no precious memory is missed.</p>
+                </div>
+                
+                <div class="ai-feature-card">
+                    <div class="ai-feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Style Personalization</h3>
+                    <p>Machine learning adapts to your style preferences, creating a unique photographic signature.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Ready to capture your special moments? Let's discuss your photography needs.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>hello@gstudio.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Bidar Karnataka</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone">
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service" required>
+                            <option value="">Select a Service</option>
+                            <option value="portrait">Portrait Photography</option>
+                            <option value="wedding">Wedding Photography</option>
+                            <option value="event">Event Photography</option>
+                            <option value="lifestyle">Lifestyle Photography</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>G Studio</h3>
+                    <p>The Art of Capturing Memories - Creating beautiful moments with passion and creativity.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Portrait Photography</li>
+                        <li>Wedding Photography</li>
+                        <li>Event Photography</li>
+                        <li>Lifestyle Photography</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 G Studio - The Art of Capturing Memories. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI Chatbot Widget -->
+    <div id="ai-chatbot" class="chatbot-container">
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chatbot-info">
+                <h4>G Studio AI Assistant</h4>
+                <p class="chatbot-status">Online</p>
+            </div>
+            <button class="chatbot-close" id="closeChatbot">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <div class="message-content">
+                    <p>Hi! I'm G Studio's AI assistant. I can help you with:</p>
+                    <ul>
+                        <li>📸 Photography package recommendations</li>
+                        <li>📅 Booking availability</li>
+                        <li>💰 Pricing information</li>
+                        <li>🎨 Style suggestions</li>
+                    </ul>
+                    <p>What can I help you with today?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ask me anything about photography services...">
+            <button id="sendMessage">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- AI Chatbot Toggle Button -->
+    <button id="chatbotToggle" class="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+        <span class="chatbot-badge">AI</span>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
