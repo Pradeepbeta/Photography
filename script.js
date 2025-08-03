@@ -1,43 +1,235 @@
-// Mobile Navigation Toggle
+// Enhanced Interactive Features for G Studio Photography Website - SEO Optimized
+
+// SEO and Performance Optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    // Add structured data for FAQ
+    addFAQStructuredData();
+    
+    // Initialize lazy loading for images
+    initializeLazyLoading();
+    
+    // Add schema markup for breadcrumbs
+    addBreadcrumbSchema();
+    
+    // Initialize FAQ functionality
+    initializeFAQ();
+    
+    // Enhanced AI chatbot with more dynamic responses
+    initializeEnhancedAI();
+});
+
+// Add FAQ structured data for SEO
+function addFAQStructuredData() {
+    const faqData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What photography services do you offer in Bidar, Karnataka?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer comprehensive photography services including portrait photography, wedding photography, event photography, and lifestyle photography. All services are enhanced with AI technology for superior quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much do photography services cost in Bidar?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our photography packages start at $200 for portraits, $250 for lifestyle sessions, $300 for events, and $1,500 for weddings. We offer competitive pricing for professional quality photography in Bidar, Karnataka."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you travel for photography sessions?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide photography services throughout Bidar, Karnataka and surrounding areas. We're happy to travel to your preferred location for the perfect shot."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does AI enhance your photography?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our AI technology provides smart shot recommendations, enhanced editing, intelligent scene detection, and personalized style adaptation for superior image quality and unique photographic results."
+                }
+            }
+        ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(faqData);
+    document.head.appendChild(script);
+}
+
+// Initialize lazy loading for better performance
+function initializeLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src) {
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+}
+
+// Add breadcrumb schema for better SEO
+function addBreadcrumbSchema() {
+    const breadcrumbData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://gstudio-photography.com"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Photography Services",
+                "item": "https://gstudio-photography.com#services"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Contact",
+                "item": "https://gstudio-photography.com#contact"
+            }
+        ]
+    };
+    
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(breadcrumbData);
+    document.head.appendChild(script);
+}
+
+// Initialize FAQ functionality
+function initializeFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+            });
+            
+            // Toggle current item
+            if (!isOpen) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+// Enhanced AI chatbot with more dynamic responses
+function initializeEnhancedAI() {
+    // Add more sophisticated AI responses
+    const enhancedResponses = {
+        location: {
+            bidar: "G Studio is located in the heart of Bidar, Karnataka. We serve clients throughout the region including nearby cities like Gulbarga, Raichur, and Hyderabad. Our studio is easily accessible and we also offer on-location photography services.",
+            travel: "Yes, we provide photography services throughout Bidar, Karnataka and surrounding areas. We're happy to travel to your preferred location for the perfect shot. Travel fees may apply for locations outside Bidar city limits.",
+            studio: "Our professional studio is located in Bidar, Karnataka, equipped with the latest photography equipment and AI-enhanced technology. We also offer outdoor photography sessions at various scenic locations in and around Bidar."
+        },
+        pricing: {
+            portrait: "Portrait photography packages start at $200 and include professional headshots, family portraits, corporate photography, and personal branding sessions. Each package includes AI-enhanced editing and digital delivery.",
+            wedding: "Wedding photography packages start at $1,500 and include full day coverage, engagement sessions, bridal portraits, and a comprehensive digital gallery. Our AI technology ensures every precious moment is captured perfectly.",
+            event: "Event photography starts at $300 and covers corporate events, birthday parties, conferences, and social gatherings. We use AI-enhanced techniques to capture the best moments of your special occasions.",
+            lifestyle: "Lifestyle photography starts at $250 and includes natural, candid photography sessions, maternity photos, newborn sessions, and pet photography. Our AI technology helps create authentic, beautiful moments."
+        },
+        ai: {
+            technology: "Our AI technology includes smart shot recommendations, enhanced editing algorithms, intelligent scene detection, and personalized style adaptation. This ensures superior image quality and unique photographic results.",
+            benefits: "AI-enhanced photography provides better composition suggestions, automatic lighting optimization, intelligent background blur, and personalized editing styles. This technology helps us capture and enhance your memories perfectly.",
+            process: "Our AI process begins with intelligent scene analysis, followed by smart composition recommendations, real-time lighting optimization, and post-processing enhancement. This creates stunning, professional-quality images."
+        }
+    };
+    
+    // Add these enhanced responses to the existing chatbot
+    if (window.chatbot && window.chatbot.responses) {
+        window.chatbot.responses = { ...window.chatbot.responses, ...enhancedResponses };
+    }
+}
+
+// Mobile Navigation Toggle with improved animation
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Add smooth animation
+    if (navMenu.classList.contains('active')) {
+        navMenu.style.display = 'flex';
+        setTimeout(() => navMenu.style.opacity = '1', 10);
+    } else {
+        navMenu.style.opacity = '0';
+        setTimeout(() => navMenu.style.display = 'none', 300);
+    }
 });
 
 // Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    navMenu.style.opacity = '0';
+    setTimeout(() => navMenu.style.display = 'none', 300);
 }));
 
-// Navbar scroll effect
+// Enhanced Navbar scroll effect with parallax
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
+    const scrolled = window.scrollY;
+    
+    if (scrolled > 100) {
         navbar.classList.add('scrolled');
+        navbar.style.transform = `translateY(${scrolled * 0.1}px)`;
     } else {
         navbar.classList.remove('scrolled');
+        navbar.style.transform = 'translateY(0)';
     }
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling with enhanced behavior
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
             });
         }
     });
 });
 
-// Portfolio filtering
+// Enhanced Portfolio filtering with animations
 const filterButtons = document.querySelectorAll('.filter-btn');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -50,25 +242,70 @@ filterButtons.forEach(button => {
         
         const filterValue = button.getAttribute('data-filter');
         
+        // Add loading animation
         portfolioItems.forEach(item => {
-            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                item.style.display = 'block';
-                setTimeout(() => {
-                    item.classList.add('visible');
-                    item.classList.remove('hidden');
-                }, 100);
-            } else {
-                item.classList.add('hidden');
-                item.classList.remove('visible');
-                setTimeout(() => {
-                    item.style.display = 'none';
-                }, 300);
-            }
+            item.style.opacity = '0';
+            item.style.transform = 'scale(0.8)';
         });
+        
+        setTimeout(() => {
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 100);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        item.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }, 200);
     });
 });
 
-// Contact form handling
+// Image Lightbox for Portfolio
+function createLightbox() {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-image" src="" alt="">
+            <div class="lightbox-caption"></div>
+        </div>
+    `;
+    document.body.appendChild(lightbox);
+    
+    // Close lightbox
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-close')) {
+            lightbox.classList.remove('active');
+        }
+    });
+    
+    return lightbox;
+}
+
+const lightbox = createLightbox();
+
+// Add click events to portfolio items
+portfolioItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const img = item.querySelector('img');
+        const caption = item.querySelector('.portfolio-overlay h3').textContent;
+        
+        lightbox.querySelector('.lightbox-image').src = img.src;
+        lightbox.querySelector('.lightbox-caption').textContent = caption;
+        lightbox.classList.add('active');
+    });
+});
+
+// Enhanced Contact form with real-time validation
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
@@ -82,36 +319,104 @@ contactForm.addEventListener('submit', function(e) {
     const service = formData.get('service');
     const message = formData.get('message');
     
-    // Basic validation
-    if (!name || !email || !service || !message) {
-        showNotification('Please fill in all required fields.', 'error');
+    // Enhanced validation with real-time feedback
+    let isValid = true;
+    const errors = [];
+    
+    if (!name || name.trim().length < 2) {
+        errors.push('Name must be at least 2 characters long');
+        isValid = false;
+    }
+    
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        errors.push('Please enter a valid email address');
+        isValid = false;
+    }
+    
+    if (!service) {
+        errors.push('Please select a service');
+        isValid = false;
+    }
+    
+    if (!message || message.trim().length < 10) {
+        errors.push('Message must be at least 10 characters long');
+        isValid = false;
+    }
+    
+    if (!isValid) {
+        showNotification(errors.join('\n'), 'error');
         return;
     }
     
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showNotification('Please enter a valid email address.', 'error');
-        return;
-    }
+    // Show loading state
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
     
-    // Simulate form submission
-    showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-    contactForm.reset();
-    
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', { name, email, phone, service, message });
+    // Simulate form submission with delay
+    setTimeout(() => {
+        showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
 });
 
-// Notification system
-function showNotification(message, type = 'info') {
-    // Remove existing notifications
-    const existingNotification = document.querySelector('.notification');
-    if (existingNotification) {
-        existingNotification.remove();
-    }
+// Real-time form validation
+contactForm.querySelectorAll('input, textarea, select').forEach(field => {
+    field.addEventListener('blur', () => {
+        validateField(field);
+    });
     
-    // Create notification element
+    field.addEventListener('input', () => {
+        clearFieldError(field);
+    });
+});
+
+function validateField(field) {
+    const value = field.value.trim();
+    const fieldName = field.name;
+    
+    clearFieldError(field);
+    
+    switch(fieldName) {
+        case 'name':
+            if (!value || value.length < 2) {
+                showFieldError(field, 'Name must be at least 2 characters');
+            }
+            break;
+        case 'email':
+            if (!value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+                showFieldError(field, 'Please enter a valid email address');
+            }
+            break;
+        case 'message':
+            if (!value || value.length < 10) {
+                showFieldError(field, 'Message must be at least 10 characters');
+            }
+            break;
+    }
+}
+
+function showFieldError(field, message) {
+    field.classList.add('error');
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'field-error';
+    errorDiv.textContent = message;
+    field.parentNode.appendChild(errorDiv);
+}
+
+function clearFieldError(field) {
+    field.classList.remove('error');
+    const errorDiv = field.parentNode.querySelector('.field-error');
+    if (errorDiv) {
+        errorDiv.remove();
+    }
+}
+
+// Enhanced notification system
+function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -121,74 +426,25 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
-    notification.style.cssText = `
-        position: fixed;
-        top: 100px;
-        right: 20px;
-        background: ${type === 'success' ? '#d4edda' : type === 'error' ? '#f8d7da' : '#d1ecf1'};
-        color: ${type === 'success' ? '#155724' : type === 'error' ? '#721c24' : '#0c5460'};
-        border: 1px solid ${type === 'success' ? '#c3e6cb' : type === 'error' ? '#f5c6cb' : '#bee5eb'};
-        border-radius: 8px;
-        padding: 15px 20px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        z-index: 10000;
-        max-width: 400px;
-        animation: slideIn 0.3s ease;
-    `;
-    
-    // Add animation keyframes
-    if (!document.querySelector('#notification-styles')) {
-        const style = document.createElement('style');
-        style.id = 'notification-styles';
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-            .notification-content {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            .notification-close {
-                background: none;
-                border: none;
-                font-size: 20px;
-                cursor: pointer;
-                margin-left: 15px;
-                opacity: 0.7;
-            }
-            .notification-close:hover {
-                opacity: 1;
-            }
-        `;
-        document.head.appendChild(style);
-    }
-    
     document.body.appendChild(notification);
     
-    // Close button functionality
-    const closeBtn = notification.querySelector('.notification-close');
-    closeBtn.addEventListener('click', () => {
-        notification.style.animation = 'slideOut 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-    });
+    // Animate in
+    setTimeout(() => notification.classList.add('show'), 10);
     
     // Auto remove after 5 seconds
     setTimeout(() => {
-        if (notification.parentNode) {
-            notification.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => notification.remove(), 300);
-        }
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
     }, 5000);
+    
+    // Manual close
+    notification.querySelector('.notification-close').addEventListener('click', () => {
+        notification.classList.remove('show');
+        setTimeout(() => notification.remove(), 300);
+    });
 }
 
-// Intersection Observer for animations
+// Scroll animations with Intersection Observer
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -203,9 +459,222 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
+document.querySelectorAll('.about-content, .portfolio-item, .service-card, .ai-feature-card').forEach(el => {
+    observer.observe(el);
+});
+
+// Enhanced AI Chatbot with better responses
+class AIPhotographyChatbot {
+    constructor() {
+        this.isOpen = false;
+        this.messages = [];
+        this.responses = this.initializeResponses();
+        this.bindEvents();
+    }
+
+    initializeResponses() {
+        return {
+            greetings: [
+                "Hi! I'm G Studio's AI assistant. How can I help you today?",
+                "Hello! Welcome to G Studio. What photography service are you interested in?",
+                "Hi there! I can help you with booking, pricing, or any photography questions."
+            ],
+            pricing: [
+                "Our pricing starts at $200 for portraits, $1,500 for weddings, $300 for events, and $250 for lifestyle sessions. Would you like more details?",
+                "Portrait sessions start at $200, wedding packages at $1,500, and event coverage at $300. What type of session interests you?",
+                "We offer competitive pricing: portraits from $200, weddings from $1,500, events from $300, and lifestyle sessions from $250."
+            ],
+            booking: [
+                "Great! I can help you book a session. What type of photography are you looking for?",
+                "Perfect! Let me know what service you're interested in and I'll guide you through the booking process.",
+                "Excellent choice! I'll need to know your preferred service and date to help with booking."
+            ],
+            services: [
+                "We offer portrait photography, wedding coverage, event photography, and lifestyle sessions. Which interests you most?",
+                "Our services include professional portraits, complete wedding coverage, corporate events, and natural lifestyle photography.",
+                "We specialize in portraits, weddings, events, and lifestyle photography. Each service is tailored to your needs."
+            ],
+            default: [
+                "I'm here to help with photography services, pricing, and booking. What would you like to know?",
+                "I can assist with our services, pricing, or help you book a session. What information do you need?",
+                "Let me know if you have questions about our photography services, pricing, or booking process."
+            ]
+        };
+    }
+
+    bindEvents() {
+        const toggleBtn = document.getElementById('chatbotToggle');
+        const closeBtn = document.getElementById('closeChatbot');
+        const sendBtn = document.getElementById('sendMessage');
+        const input = document.getElementById('chatbotInput');
+
+        toggleBtn.addEventListener('click', () => this.toggleChatbot());
+        closeBtn.addEventListener('click', () => this.closeChatbot());
+        sendBtn.addEventListener('click', () => this.sendMessage());
+        
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                this.sendMessage();
+            }
+        });
+    }
+
+    toggleChatbot() {
+        const container = document.getElementById('ai-chatbot');
+        if (this.isOpen) {
+            this.closeChatbot();
+        } else {
+            this.openChatbot();
+        }
+    }
+
+    openChatbot() {
+        const container = document.getElementById('ai-chatbot');
+        container.classList.add('active');
+        this.isOpen = true;
+        this.scrollToBottom();
+        
+        // Add welcome message if first time
+        if (this.messages.length === 0) {
+            this.addBotMessage(this.getRandomResponse(this.responses.greetings));
+        }
+    }
+
+    closeChatbot() {
+        const container = document.getElementById('ai-chatbot');
+        container.classList.remove('active');
+        this.isOpen = false;
+    }
+
+    sendMessage() {
+        const input = document.getElementById('chatbotInput');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        this.addUserMessage(message);
+        input.value = '';
+        
+        // Simulate typing delay
+        setTimeout(() => {
+            const response = this.generateResponse(message);
+            this.addBotMessage(response);
+        }, 1000);
+    }
+
+    addUserMessage(message) {
+        const messagesContainer = document.getElementById('chatbotMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message user-message';
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                <p>${message}</p>
+            </div>
+            <div class="message-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+        `;
+        messagesContainer.appendChild(messageDiv);
+        this.messages.push({ type: 'user', content: message });
+        this.scrollToBottom();
+    }
+
+    addBotMessage(message) {
+        const messagesContainer = document.getElementById('chatbotMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'message bot-message';
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fas fa-camera"></i>
+            </div>
+            <div class="message-content">
+                <p>${message}</p>
+            </div>
+        `;
+        messagesContainer.appendChild(messageDiv);
+        this.messages.push({ type: 'bot', content: message });
+        this.scrollToBottom();
+    }
+
+    generateResponse(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
+            return this.getRandomResponse(this.responses.pricing);
+        } else if (lowerMessage.includes('book') || lowerMessage.includes('schedule') || lowerMessage.includes('appointment')) {
+            return this.getRandomResponse(this.responses.booking);
+        } else if (lowerMessage.includes('service') || lowerMessage.includes('what do you') || lowerMessage.includes('offer')) {
+            return this.getRandomResponse(this.responses.services);
+        } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+            return this.getRandomResponse(this.responses.greetings);
+        } else {
+            return this.getRandomResponse(this.responses.default);
+        }
+    }
+
+    getRandomResponse(responses) {
+        return responses[Math.floor(Math.random() * responses.length)];
+    }
+
+    scrollToBottom() {
+        const messagesContainer = document.getElementById('chatbotMessages');
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+}
+
+// Initialize enhanced chatbot
+const chatbot = new AIPhotographyChatbot();
+
+// Enhanced loading animations
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+    
+    // Animate hero section
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroButtons = document.querySelector('.hero-buttons');
+    
+    setTimeout(() => heroTitle.classList.add('animate-in'), 500);
+    setTimeout(() => heroSubtitle.classList.add('animate-in'), 700);
+    setTimeout(() => heroButtons.classList.add('animate-in'), 900);
+});
+
+// Enhanced scroll-based animations
+function initializeScrollAnimations() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    elements.forEach(el => scrollObserver.observe(el));
+}
+
+// Initialize all enhanced features
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-card, .portfolio-item, .about-content, .contact-content');
-    animateElements.forEach(el => observer.observe(el));
+    initializeScrollAnimations();
+    
+    // Add smooth hover effects to service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Add parallax effect to hero image
+    window.addEventListener('scroll', () => {
+        const heroImage = document.querySelector('.hero-image img');
+        const scrolled = window.scrollY;
+        heroImage.style.transform = `translateY(${scrolled * 0.5}px)`;
+    });
 });
 
 // Add CSS for animations
@@ -360,7 +829,7 @@ const debouncedScrollHandler = debounce(() => {
 
 window.addEventListener('scroll', debouncedScrollHandler);
 
-// AI Chatbot Functionality
+// Enhanced AI Chatbot Functionality with Dynamic Features
 class AIPhotographyChatbot {
     constructor() {
         this.chatbotToggle = document.getElementById('chatbotToggle');
@@ -371,9 +840,14 @@ class AIPhotographyChatbot {
         this.messagesContainer = document.getElementById('chatbotMessages');
         
         this.isOpen = false;
+        this.userPreferences = {};
+        this.conversationHistory = [];
+        this.currentContext = 'general';
         this.responses = this.initializeResponses();
+        this.aiFeatures = this.initializeAIFeatures();
         
         this.bindEvents();
+        this.initializeAIAnalytics();
     }
     
     initializeResponses() {
@@ -383,6 +857,22 @@ class AIPhotographyChatbot {
                 "Hi there! I'm here to assist you with all your photography needs. What would you like to know?",
                 "Welcome! I'm G Studio's AI assistant. Let me help you find the perfect photography service!"
             ],
+            location: {
+                bidar: "G Studio is located in the heart of Bidar, Karnataka. We serve clients throughout the region including nearby cities like Gulbarga, Raichur, and Hyderabad. Our studio is easily accessible and we also offer on-location photography services.",
+                travel: "Yes, we provide photography services throughout Bidar, Karnataka and surrounding areas. We're happy to travel to your preferred location for the perfect shot. Travel fees may apply for locations outside Bidar city limits.",
+                studio: "Our professional studio is located in Bidar, Karnataka, equipped with the latest photography equipment and AI-enhanced technology. We also offer outdoor photography sessions at various scenic locations in and around Bidar."
+            },
+            pricing: {
+                portrait: "Portrait photography packages start at $200 and include professional headshots, family portraits, corporate photography, and personal branding sessions. Each package includes AI-enhanced editing and digital delivery.",
+                wedding: "Wedding photography packages start at $1,500 and include full day coverage, engagement sessions, bridal portraits, and a comprehensive digital gallery. Our AI technology ensures every precious moment is captured perfectly.",
+                event: "Event photography starts at $300 and covers corporate events, birthday parties, conferences, and social gatherings. We use AI-enhanced techniques to capture the best moments of your special occasions.",
+                lifestyle: "Lifestyle photography starts at $250 and includes natural, candid photography sessions, maternity photos, newborn sessions, and pet photography. Our AI technology helps create authentic, beautiful moments."
+            },
+            ai: {
+                technology: "Our AI technology includes smart shot recommendations, enhanced editing algorithms, intelligent scene detection, and personalized style adaptation. This ensures superior image quality and unique photographic results.",
+                benefits: "AI-enhanced photography provides better composition suggestions, automatic lighting optimization, intelligent background blur, and personalized editing styles. This technology helps us capture and enhance your memories perfectly.",
+                process: "Our AI process begins with intelligent scene analysis, followed by smart composition recommendations, real-time lighting optimization, and post-processing enhancement. This creates stunning, professional-quality images."
+            },
             pricing: {
                 portrait: "Our portrait photography starts at $200 and includes individual portraits, family sessions, corporate headshots, and personal branding photos. Would you like more details about any specific type?",
                 wedding: "Wedding photography packages start at $1,500 and include full day coverage, engagement sessions, bridal portraits, and a digital gallery. We capture every precious moment of your special day!",
@@ -404,6 +894,64 @@ class AIPhotographyChatbot {
                 "Let me connect you with the right information! What type of photography session are you considering?"
             ]
         };
+    }
+    
+    initializeAIFeatures() {
+        return {
+            smartRecommendations: true,
+            personalizedResponses: true,
+            contextAwareness: true,
+            learningCapability: true,
+            realTimeAnalytics: true
+        };
+    }
+    
+    initializeAIAnalytics() {
+        // Track user interactions for better AI responses
+        this.analytics = {
+            totalInteractions: 0,
+            popularTopics: {},
+            userJourney: [],
+            conversionEvents: []
+        };
+        
+        // Start analytics tracking
+        this.startAnalyticsTracking();
+    }
+    
+    startAnalyticsTracking() {
+        // Track page interactions
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.portfolio-item')) {
+                this.trackEvent('portfolio_view', e.target.closest('.portfolio-item').dataset.category);
+            }
+            if (e.target.closest('.service-card')) {
+                this.trackEvent('service_interest', e.target.closest('.service-card').querySelector('h3').textContent);
+            }
+        });
+        
+        // Track scroll behavior
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                this.trackEvent('scroll_engagement', window.scrollY);
+            }, 1000);
+        });
+    }
+    
+    trackEvent(eventType, eventData) {
+        this.analytics.totalInteractions++;
+        this.analytics.userJourney.push({
+            type: eventType,
+            data: eventData,
+            timestamp: Date.now()
+        });
+        
+        // Update popular topics
+        if (eventType === 'service_interest') {
+            this.analytics.popularTopics[eventData] = (this.analytics.popularTopics[eventData] || 0) + 1;
+        }
     }
     
     bindEvents() {
@@ -483,18 +1031,20 @@ class AIPhotographyChatbot {
     generateResponse(message) {
         const lowerMessage = message.toLowerCase();
         
+        // Track this interaction
+        this.trackEvent('chat_interaction', message);
+        
+        // Update user preferences based on message content
+        this.updateUserPreferences(message);
+        
         // Greeting detection
         if (lowerMessage.match(/\b(hi|hello|hey|good morning|good afternoon|good evening)\b/)) {
-            return this.getRandomResponse(this.responses.greetings);
+            return this.getPersonalizedGreeting();
         }
         
-        // Pricing inquiries
+        // Pricing inquiries with enhanced AI responses
         if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
-            if (lowerMessage.includes('portrait')) return this.responses.pricing.portrait;
-            if (lowerMessage.includes('wedding')) return this.responses.pricing.wedding;
-            if (lowerMessage.includes('event')) return this.responses.pricing.event;
-            if (lowerMessage.includes('lifestyle')) return this.responses.pricing.lifestyle;
-            return "Our photography packages start at $200 for portraits, $250 for lifestyle, $300 for events, and $1,500 for weddings. Which service interests you most?";
+            return this.getPersonalizedPricingResponse(lowerMessage);
         }
         
         // Service inquiries
@@ -536,6 +1086,83 @@ class AIPhotographyChatbot {
     
     getRandomResponse(responses) {
         return responses[Math.floor(Math.random() * responses.length)];
+    }
+    
+    updateUserPreferences(message) {
+        const lowerMessage = message.toLowerCase();
+        
+        // Track service interests
+        if (lowerMessage.includes('portrait')) this.userPreferences.portrait = true;
+        if (lowerMessage.includes('wedding')) this.userPreferences.wedding = true;
+        if (lowerMessage.includes('event')) this.userPreferences.event = true;
+        if (lowerMessage.includes('lifestyle')) this.userPreferences.lifestyle = true;
+        if (lowerMessage.includes('ai') || lowerMessage.includes('artificial intelligence')) this.userPreferences.ai = true;
+        if (lowerMessage.includes('bidar') || lowerMessage.includes('karnataka')) this.userPreferences.location = 'bidar';
+        
+        // Update context based on conversation
+        if (lowerMessage.includes('book') || lowerMessage.includes('schedule')) this.currentContext = 'booking';
+        if (lowerMessage.includes('price') || lowerMessage.includes('cost')) this.currentContext = 'pricing';
+        if (lowerMessage.includes('service') || lowerMessage.includes('what do you offer')) this.currentContext = 'services';
+    }
+    
+    getPersonalizedGreeting() {
+        const timeOfDay = new Date().getHours();
+        let greeting = '';
+        
+        if (timeOfDay < 12) greeting = 'Good morning';
+        else if (timeOfDay < 17) greeting = 'Good afternoon';
+        else greeting = 'Good evening';
+        
+        // Check if user has shown interest in specific services
+        const interests = Object.keys(this.userPreferences).filter(key => this.userPreferences[key]);
+        let personalizedMessage = '';
+        
+        if (interests.length > 0) {
+            const serviceNames = interests.map(interest => {
+                switch(interest) {
+                    case 'portrait': return 'portrait photography';
+                    case 'wedding': return 'wedding photography';
+                    case 'event': return 'event photography';
+                    case 'lifestyle': return 'lifestyle photography';
+                    default: return interest;
+                }
+            }).join(', ');
+            
+            personalizedMessage = ` I noticed you're interested in ${serviceNames}. I'd be happy to provide more details about our ${serviceNames} services in Bidar, Karnataka!`;
+        }
+        
+        return `${greeting}! Welcome to G Studio - The Art of Capturing Memories!${personalizedMessage} How can I assist you with your photography needs today?`;
+    }
+    
+    getPersonalizedPricingResponse(message) {
+        // Check for specific service mentions
+        if (message.includes('portrait')) return this.responses.pricing.portrait;
+        if (message.includes('wedding')) return this.responses.pricing.wedding;
+        if (message.includes('event')) return this.responses.pricing.event;
+        if (message.includes('lifestyle')) return this.responses.pricing.lifestyle;
+        
+        // Check user preferences for personalized recommendations
+        const interests = Object.keys(this.userPreferences).filter(key => this.userPreferences[key]);
+        if (interests.length > 0) {
+            const preferredService = interests[0];
+            const pricingInfo = this.responses.pricing[preferredService];
+            if (pricingInfo) {
+                return `${pricingInfo} Since you've shown interest in ${preferredService} photography, I'd be happy to provide a detailed quote for your specific needs. Would you like to discuss your requirements?`;
+            }
+        }
+        
+        // Default pricing response with AI enhancement mention
+        return "Our photography packages start at $200 for portraits, $250 for lifestyle, $300 for events, and $1,500 for weddings. All packages include our AI-enhanced editing technology for superior results. Which service interests you most? I can provide detailed pricing based on your specific needs.";
+    }
+    
+    getAIAnalytics() {
+        return {
+            totalInteractions: this.analytics.totalInteractions,
+            popularTopics: this.analytics.popularTopics,
+            userPreferences: this.userPreferences,
+            currentContext: this.currentContext,
+            conversationLength: this.conversationHistory.length
+        };
     }
     
     scrollToBottom() {
